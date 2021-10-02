@@ -19,8 +19,9 @@ QuantidadeCart(itemsArr);
 function ValorTotalCart(arr){
     const valorTotalPorItem = arr.map(i => i.price * i.quantity);
     const totalValor = valorTotalPorItem.reduce((accum, curr) => accum + curr);
-    //const valorEmReais = Intl.NumberFormat('pt-br', {style: 'currency', currency: 'BRL'}).format(totalValor);
-    console.log("Valor total do cart: " + totalValor);
+    const formatValor = totalValor/100;
+    const valorEmReais = Intl.NumberFormat('pt-br', {style: 'currency', currency: 'BRL'}).format(formatValor);
+    console.log("Valor total do cart: " + valorEmReais);
 }
 
 ValorTotalCart(itemsArr);
